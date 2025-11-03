@@ -1,0 +1,17 @@
+export const countryNames: Record<string, string> = {
+  GB: 'United Kingdom',
+  US: 'United States',
+  DE: 'Germany',
+  FR: 'France',
+  CA: 'Canada',
+  AU: 'Australia',
+  IT: 'Italy',
+  ES: 'Spain',
+  JP: 'Japan',
+  CN: 'China',
+  IN: 'India',
+  UA: 'Ukraine',
+  BR: 'Brazil',
+  MX: 'Mexico',
+  ZA: 'South Africa',
+};

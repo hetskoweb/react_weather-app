@@ -1,0 +1,27 @@
+.searchbar {
+  position: relative;
+
+  &__input {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  &__suggestions {
+    width: 100%;
+    list-style: none;
+    position: absolute;
+    margin-top: 30px;
+    margin-bottom: 0;
+    background: #2C2C2C;
+    color: #fff;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    box-sizing: border-box;
+  }
+
+  &__suggestion {
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,34 @@
+.header {
+  height: 80px;
+  background: #2C2C2C;
+  padding: 16px;
+  box-sizing: border-box;
+
+  &__wrapper {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__place {
+    width: 33.333333333%;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 17px;
+    color: #fff;
+  }
+
+  &__search {
+    width: 33.333333333%;
+  }
+
+  &__settings {
+    width: 33.333333333%;
+  }
+
+  .container {
+    height: 100%;
+  }
+}

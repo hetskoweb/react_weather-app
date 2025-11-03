@@ -1,0 +1,10 @@
+.settings {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 16px;
+
+  &__btn {
+    cursor: pointer;
+  }
+}

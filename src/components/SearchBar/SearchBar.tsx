@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 // @ts-ignore
 import { searchCities } from './../../api/weather.js';
 import './SearchBar.scss';
+import MagnifierIcon from './../../img/magnifier-icon.svg';
 
 type Props = {
   onSelectCity: (city: string) => void;
@@ -31,7 +32,7 @@ export const SearchBar: React.FC<Props> = ({ onSelectCity }) => {
         })
         .catch((err: unknown) => console.error("Error:", err));
 
-    }, 400);
+    }, 500);
 
     return () => clearTimeout(timeout);
   }, [query]);
@@ -39,13 +40,18 @@ export const SearchBar: React.FC<Props> = ({ onSelectCity }) => {
 
   return (
     <div className="searchbar">
-      <input
-        type="text"
-        className="searchbar__input"
-        placeholder="Search city..."
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-      />
+      <div className="searchbar__wrapper">
+        <span className="icon">
+          <img src={MagnifierIcon} alt="magnifier-icon" />
+        </span>
+        <input
+          type="text"
+          className="searchbar__input"
+          placeholder="Search city..."
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+        />
+      </div>
 
       {suggestions.length > 0 && (
         <ul className="searchbar__suggestions">

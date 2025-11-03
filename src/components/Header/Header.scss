@@ -1,34 +1,56 @@
 @import './../../styles/mixins.scss';
 
 .header {
-  height: 80px;
+  height: 100%;
   background: #2C2C2C;
   padding: 16px;
   box-sizing: border-box;
 
+  @include sm {
+    height: 80px;
+  }
+
   &__wrapper {
     height: 100%;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 24px;
+
+    @include sm {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0;
+    }
   }
 
   &__place {
-    width: 50%;
+    width: 100%;
     display: flex;
     align-items: center;
     gap: 4px;
     font-size: 15px;
     color: #fff;
 
+    @include sm {
+      width: 50%;
+    }
+
     @include md {
       width: 33.333333333%;
+    }
+
+    @include lg {
       font-size: 17px;
     }
   }
 
   &__search {
-    width: 50%;
+    width: 100%;
+
+    @include sm {
+      width: 50%;
+    }
 
     @include md {
       width: 33.333333333%;
@@ -36,11 +58,18 @@
   }
 
   &__settings {
-    width: 33.333333333%;
-    display: none;
+    position: absolute;
+    right: 16px;
+
+    @include sm {
+      display: none;
+    }
 
     @include md {
       display: block;
+      width: 33.333333333%;
+      position: initial;
+      right: 0;
     }
   }
 

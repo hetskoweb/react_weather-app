@@ -1,25 +1,15 @@
-import { useState } from 'react';
 import './Header.scss';
 import PinIcon from './../../img/pin-icon.svg';
 import { SearchBar } from '../SearchBar';
-import { countryNames } from '../../constants/countryNames';
 import { Settings } from '../Settings';
 
-export const Header = () => {
-  const [city, setCity] = useState(() => localStorage.getItem('city') || 'London');
-  const [country, setCountry] = useState(() => localStorage.getItem('country') || 'United Kingdom');
+type Props = {
+  city: string;
+  country: string;
+  handleSelectCity: (city: string) => void;
+};
 
-  const handleSelectCity = (selectedCity: string) => {
-    const [newCity, countryCode] = selectedCity.split(',').map(s => s.trim());
-    const newCountry = countryNames[countryCode] || countryCode;
-
-    setCity(newCity);
-    setCountry(newCountry);
-
-    localStorage.setItem('city', newCity);
-    localStorage.setItem('country', newCountry);
-  };
-
+export const Header: React.FC<Props> = ({ city, country, handleSelectCity }) => {
   return (
     <header className="header">
       <div className="container">

@@ -1,0 +1,88 @@
+@import './../../styles/mixins.scss';
+
+.current-weather {
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include md {
+      flex-direction: row;
+    }
+  }
+}
+
+.summary {
+  width: 100%;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  padding: 25px;
+  box-sizing: border-box;
+
+  @include md {
+    width: 30%;
+  }
+
+  &__img {
+    margin-left: -20px;
+
+    img {
+      width: 125px;
+      height: 125px;
+    }
+  }
+
+  &__temp {
+    font-size: 35px;
+    color: #fff;
+  }
+
+  &__feels {
+    color: #fff;
+    margin-top: 8px;
+  }
+
+  &__description {
+    text-transform: capitalize;
+    margin-top: 24px;
+    font-size: 20px;
+    color: #fff;
+  }
+}
+
+.widget {
+  width: 100%;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  padding: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 35px;
+  box-sizing: border-box;
+
+  @include md {
+    width: 70%;
+  }
+
+  &__item {
+    color: #fff;
+    width: calc((100% - 35px) / 2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+  }
+
+  &__value {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 18px;
+  }
+
+  &__name {
+    font-size: 15px;
+  }
+}
